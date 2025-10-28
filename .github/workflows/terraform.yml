@@ -13,6 +13,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - name: Debug env
+        run: |
+          echo "AWS_REGION=$AWS_REGION"
+          echo "AWS_REGION=${{ env.AWS_REGION }}"
+          echo "{{env}}"
       - name: Checkout
         uses: actions/checkout@v3
 
